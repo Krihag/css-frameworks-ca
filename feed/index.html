@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed page</title>
+    <meta
+      name="description"
+      content="This is the feed page for the social media platform. Create, read and comment on posts."
+    />
+    <script defer src="/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/5b97174c12.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/src/tailwind.css" />
+  </head>
+
+  <body class="bg-gray-200">
+    <header class="bg-primary py-5 text-slate-300">
+      <nav
+        class="max-w-7xl m-auto lg:flex items-center gap-8 justify-between px-8"
+      >
+        <div class="lg:flex gap-8 items-center justify-center">
+          <div class="flex justify-between">
+            <a href="/feed/" class="text-xl uppercase">Social media platform</a>
+            <div class="lg:hidden py-1 px-2 cursor-pointer" id="hamburger-menu">
+              <i class="fa-solid fa-bars text-xl"></i>
+            </div>
+          </div>
+
+          <ul
+            class="my-12 hidden lg:my-0 lg:flex gap-3 uppercase hidden-nav text-center"
+          >
+            <li class="hover:text-slate-400 my-2">
+              <a href="/profile/">Profile</a>
+            </li>
+            <li class="hover:text-slate-400 my-2 font-bold">
+              <a href="/feed/">Feed</a>
+            </li>
+          </ul>
+        </div>
+        <div class="hidden lg:flex gap-8 items-center hidden-nav text-center">
+          <div class="hidden lg:flex gap-1 justify-center my-2">
+            <input
+              type="text"
+              placeholder="Search"
+              class="px-4 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            />
+            <button
+              class="border-solid bg-primary-light px-4 border-gray-700 rounded-md shadow-md"
+            >
+              Search
+            </button>
+          </div>
+          <a href="../">Logout</a>
+        </div>
+      </nav>
+    </header>
+    <main class="max-w-7xl m-auto">
+      <form
+        class="mt-20 flex flex-col items-center bg-white p-6 max-w-sm rounded-lg mx-auto h-96 justify-center shadow-md"
+      >
+        <h1 class="text-2xl text-center mb-6">New post</h1>
+        <input
+          type="text"
+          class="resize-none bg-gray-100 w-full rounded-lg border-gray-300 p-2 text-center"
+          placeholder="Post title"
+        />
+        <textarea
+          class="h-28 resize-none bg-gray-100 w-full rounded-lg border-gray-300 p-4 my-4 text-center"
+          placeholder="What's on your mind?"
+        ></textarea>
+        <button
+          class="bg-primary hover:bg-primary-light duration-500 w-36 rounded-3xl p-2 shadow-md text-slate-200"
+        >
+          Post
+        </button>
+      </form>
+
+      <section class="my-20 w-full">
+        <div class="flex gap-4 items-center justify-center">
+          <div class="text-xl">Sort by:</div>
+          <select
+            name="sort-by"
+            id="sort-by"
+            class="rounded-md border-none shadow-md"
+          >
+            <option value="newest">Newest posts</option>
+            <option value="oldest">Oldest Posts</option>
+            <option value="popularity">Popularity</option>
+          </select>
+        </div>
+        <div class="flex flex-wrap gap-8 mt-8 justify-center">
+          <div class="bg-white rounded-3xl shadow-md py-8 px-6 max-w-96">
+            <div class="flex items-center justify-center">
+              <img
+                src="/src/images/dog-profile.jpg"
+                alt="Profile Picture"
+                class="rounded-full h-14 w-14 shadow-lg object-cover"
+              />
+              <div class="ml-4">
+                <p>
+                  Posted by
+                  <a href="/profile/" class="text-primary font-semibold"
+                    >Username</a
+                  >
+                </p>
+                <p class="text-gray-500">21st January, 2024</p>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <h2 class="text-xl font-semibold my-4">Learning Javascript</h2>
+              <p class="text-gray-800">
+                JavaScript is a powerful programming language that is commonly
+                used for web development. It allows developers to add
+                interactivity and dynamic behavior to websites... <br />
+                <span class="text-blue-700 cursor-pointer">read more</span>
+              </p>
+            </div>
+
+            <div class="mt-4 flex gap-2 cursor-pointer items-start max-w-32">
+              <i class="fa-regular fa-comment text-blue-700 text-lg"></i>
+              <p class="text-blue-700">25 comments</p>
+            </div>
+            <div class="flex gap-2 items-start">
+              <i
+                class="fa-regular fa-thumbs-up text-blue-700 text-lg cursor-pointer"
+              ></i>
+              <p class="text-blue-700">10 likes</p>
+            </div>
+            <input
+              class="rounded-md border-gray-300 border-2 bg-gray-100 w-full h-14 cursor-text flex items-center pl-5 text-gray-500 mt-4"
+              placeholder="Leave a comment..."
+            />
+          </div>
+
+          <div class="bg-white rounded-3xl shadow-md py-8 px-6 max-w-96">
+            <div class="flex items-center">
+              <img
+                src="/src/images/dog-profile.jpg"
+                alt="Profile Picture"
+                class="rounded-full h-14 w-14 shadow-lg object-cover"
+              />
+              <div class="ml-4">
+                <p>
+                  Posted by
+                  <a href="/profile/" class="text-primary font-semibold"
+                    >Username</a
+                  >
+                </p>
+                <p class="text-gray-500">21st January, 2024</p>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <h2 class="text-xl font-semibold my-4">Learning Javascript</h2>
+              <p class="text-gray-800">
+                JavaScript is a powerful programming language that is commonly
+                used for web development. It allows developers to add
+                interactivity and dynamic behavior to websites... <br />
+                <span class="text-blue-700 cursor-pointer">read more</span>
+              </p>
+            </div>
+
+            <div class="mt-4 flex gap-2 cursor-pointer items-start max-w-32">
+              <i class="fa-regular fa-comment text-blue-700 text-lg"></i>
+              <p class="text-blue-700">25 comments</p>
+            </div>
+            <div class="flex gap-2 items-start">
+              <i
+                class="fa-regular fa-thumbs-up text-blue-700 text-lg cursor-pointer"
+              ></i>
+              <p class="text-blue-700">10 likes</p>
+            </div>
+            <input
+              class="rounded-md border-gray-300 border-2 bg-gray-100 w-full h-14 cursor-text flex items-center pl-5 text-gray-500 mt-4"
+              placeholder="Leave a comment..."
+            />
+          </div>
+          <div class="bg-white rounded-3xl shadow-md py-8 px-6 max-w-96">
+            <div class="flex items-center">
+              <img
+                src="/src/images/dog-profile.jpg"
+                alt="Profile Picture"
+                class="rounded-full h-14 w-14 shadow-lg object-cover"
+              />
+              <div class="ml-4">
+                <p>
+                  Posted by
+                  <a href="/profile/" class="text-primary font-semibold"
+                    >Username</a
+                  >
+                </p>
+                <p class="text-gray-500">21st January, 2024</p>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <h2 class="text-xl font-semibold my-4">Learning Javascript</h2>
+              <p class="text-gray-800">
+                JavaScript is a powerful programming language that is commonly
+                used for web development. It allows developers to add
+                interactivity and dynamic behavior to websites... <br />
+                <span class="text-blue-700 cursor-pointer">read more</span>
+              </p>
+            </div>
+
+            <div class="mt-4 flex gap-2 cursor-pointer items-start max-w-32">
+              <i class="fa-regular fa-comment text-blue-700 text-lg"></i>
+              <p class="text-blue-700">25 comments</p>
+            </div>
+            <div class="flex gap-2 items-start">
+              <i
+                class="fa-regular fa-thumbs-up text-blue-700 text-lg cursor-pointer"
+              ></i>
+              <p class="text-blue-700">10 likes</p>
+            </div>
+            <input
+              class="rounded-md border-gray-300 border-2 bg-gray-100 w-full h-14 cursor-text flex items-center pl-5 text-gray-500 mt-4"
+              placeholder="Leave a comment..."
+            />
+          </div>
+          <div class="bg-white rounded-3xl shadow-md py-8 px-6 max-w-96">
+            <div class="flex items-center">
+              <img
+                src="/src/images/dog-profile.jpg"
+                alt="Profile Picture"
+                class="rounded-full h-14 w-14 shadow-lg object-cover"
+              />
+              <div class="ml-4">
+                <p>
+                  Posted by
+                  <a href="/profile/" class="text-primary font-semibold"
+                    >Username</a
+                  >
+                </p>
+                <p class="text-gray-500">21st January, 2024</p>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <h2 class="text-xl font-semibold my-4">Learning Javascript</h2>
+              <p class="text-gray-800">
+                JavaScript is a powerful programming language that is commonly
+                used for web development. It allows developers to add
+                interactivity and dynamic behavior to websites... <br />
+                <span class="text-blue-700 cursor-pointer">read more</span>
+              </p>
+            </div>
+
+            <div class="mt-4 flex gap-2 cursor-pointer items-start max-w-32">
+              <i class="fa-regular fa-comment text-blue-700 text-lg"></i>
+              <p class="text-blue-700">25 comments</p>
+            </div>
+            <div class="flex gap-2 items-start">
+              <i
+                class="fa-regular fa-thumbs-up text-blue-700 text-lg cursor-pointer"
+              ></i>
+              <p class="text-blue-700">10 likes</p>
+            </div>
+            <input
+              class="rounded-md border-gray-300 border-2 bg-gray-100 w-full h-14 cursor-text flex items-center pl-5 text-gray-500 mt-4"
+              placeholder="Leave a comment..."
+            />
+          </div>
+          <div class="bg-white rounded-3xl shadow-md py-8 px-6 max-w-96">
+            <div class="flex items-center">
+              <img
+                src="/src/images/dog-profile.jpg"
+                alt="Profile Picture"
+                class="rounded-full h-14 w-14 shadow-lg object-cover"
+              />
+              <div class="ml-4">
+                <p>
+                  Posted by
+                  <a href="/profile/" class="text-primary font-semibold"
+                    >Username</a
+                  >
+                </p>
+                <p class="text-gray-500">21st January, 2024</p>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <h2 class="text-xl font-semibold my-4">Learning Javascript</h2>
+              <p class="text-gray-800">
+                JavaScript is a powerful programming language that is commonly
+                used for web development. It allows developers to add
+                interactivity and dynamic behavior to websites... <br />
+                <span class="text-blue-700 cursor-pointer">read more</span>
+              </p>
+            </div>
+
+            <div class="mt-4 flex gap-2 cursor-pointer items-start max-w-32">
+              <i class="fa-regular fa-comment text-blue-700 text-lg"></i>
+              <p class="text-blue-700">25 comments</p>
+            </div>
+            <div class="flex gap-2 items-start">
+              <i
+                class="fa-regular fa-thumbs-up text-blue-700 text-lg cursor-pointer"
+              ></i>
+              <p class="text-blue-700">10 likes</p>
+            </div>
+            <input
+              class="rounded-md border-gray-300 border-2 bg-gray-100 w-full h-14 cursor-text flex items-center pl-5 text-gray-500 mt-4"
+              placeholder="Leave a comment..."
+            />
+          </div>
+
+          <div class="bg-white rounded-3xl shadow-md py-8 px-6 max-w-96">
+            <div class="flex items-center">
+              <img
+                src="/src/images/dog-profile.jpg"
+                alt="Profile Picture"
+                class="rounded-full h-14 w-14 shadow-lg object-cover"
+              />
+              <div class="ml-4">
+                <p>
+                  Posted by
+                  <a href="/profile/" class="text-primary font-semibold"
+                    >Username</a
+                  >
+                </p>
+                <p class="text-gray-500">21st January, 2024</p>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <h2 class="text-xl font-semibold my-4">Learning Javascript</h2>
+              <p class="text-gray-800">
+                JavaScript is a powerful programming language that is commonly
+                used for web development. It allows developers to add
+                interactivity and dynamic behavior to websites... <br />
+                <span class="text-blue-700 cursor-pointer">read more</span>
+              </p>
+            </div>
+
+            <div class="mt-4 flex gap-2 cursor-pointer items-start max-w-32">
+              <i class="fa-regular fa-comment text-blue-700 text-lg"></i>
+              <p class="text-blue-700">25 comments</p>
+            </div>
+            <div class="flex gap-2 items-start">
+              <i
+                class="fa-regular fa-thumbs-up text-blue-700 text-lg cursor-pointer"
+              ></i>
+              <p class="text-blue-700">10 likes</p>
+            </div>
+            <input
+              class="rounded-md border-gray-300 border-2 bg-gray-100 w-full h-14 cursor-text flex items-center pl-5 text-gray-500 mt-4"
+              placeholder="Leave a comment..."
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-primary p-8 text-slate-200 text-lg">
+      <div class="max-w-7xl flex justify-between items-center m-auto">
+        <div>
+          <p>&copy; Copyright 2024</p>
+          <div>Social Media Platform</div>
+        </div>
+        <ul>
+          <li>Some</li>
+          <li>Footer</li>
+          <li>Items</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
