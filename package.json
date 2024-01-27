@@ -1,26 +1,24 @@
 {
-  "name": "css-frameworks-ca",
+  "name": "tailwind-test-6",
   "version": "0.0.1",
-  "description": "A starting point for the CSS Frameworks CA project",
+  "description": "Tailwind project with Vite",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1"
+    "start": "vite",
+    "build-vite": "vite build",
+    "build": "npx tailwindcss build  -o src/tailwind.css",
+    "watch": "npx tailwindcss build -w -o src/tailwind.css"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NoroffFEU/css-frameworks-ca.git"
-  },
-  "keywords": [
-    "CSS",
-    "CSS",
-    "Frameworks",
-    "Bootstrap",
-    "SCSS",
-    "SASS"
-  ],
-  "author": "Oliver Dipple <oliver.dipple@noroff.no>",
+  "keywords": [],
+  "author": "Kristian Hagesæter<krihag52559@stud.noroff.no>",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/NoroffFEU/css-frameworks-ca/issues"
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.0.11"
   },
-  "homepage": "https://github.com/NoroffFEU/css-frameworks-ca#readme"
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.7"
+  }
 }
