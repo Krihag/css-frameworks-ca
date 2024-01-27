@@ -6,7 +6,8 @@
   "scripts": {
     "start": "vite",
     "build-vite": "vite build",
-    "build": "npx tailwindcss build  -o src/tailwind.css"
+    "build": "npx tailwindcss build  -o src/tailwind.css",
+    "watch": "npx tailwindcss build -w -o src/tailwind.css"
   },
   "keywords": [],
   "author": "Kristian Hagesæter<krihag52559@stud.noroff.no>",
