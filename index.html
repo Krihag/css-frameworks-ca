@@ -10,22 +10,28 @@
     <title>Social Media - Login page</title>
 
     <link rel="stylesheet" href="/src/tailwind.css" />
+    <script type="module" src="/src/js/index.mjs"></script>
   </head>
 
   <body class="bg-gray-200 min-h-screen">
     <main class="py-10 max-w-7xl m-auto">
       <div class="my-12 py-8 px-6 flex justify-center items-center">
         <form
+          id="form"
           class="md:bg-gray-100 w-full max-w-md flex flex-col md:rounded-md gap-5 self-center md:shadow-md md:py-8 md:px-10"
-          action="/profile/"
+          action="auth/login"
+          method="post"
         >
           <h1 class="text-3xl text-primary-200">Sign in form</h1>
           <div class="flex flex-col mt-8">
-            <label for="" class="text-lg">Email</label>
+            <label for="email" class="text-lg">Email</label>
             <input
               type="email"
+              name="email"
+              id="email"
               class="rounded-sm py-0.5 px-3 border-gray-300 text-lg mt-1.5"
               title="Must be a valid email address."
+              autocomplete="username"
               required
             />
           </div>
@@ -33,9 +39,12 @@
             <label for="" class="text-lg">Password</label>
             <input
               type="password"
+              name="password"
+              id="password"
               class="rounded-sm py-1 px-3 text-lg mt-1.5 border-gray-300"
               pattern=".{8,}"
               minlength="8"
+              autocomplete="current-password"
               required
               title="Password must be at least 8 characters long."
             />
@@ -56,6 +65,7 @@
 
           <button
             class="bg-primary hover:bg-primary-light duration-500 w-36 rounded-3xl p-2 shadow-md text-slate-200"
+            type="submit"
           >
             Login
           </button>

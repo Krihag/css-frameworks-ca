@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../../dist/css/output.css" />
+    <title>JS2 Test</title>
+    <script type="module" src="/src/js/index.mjs"></script>
+  </head>
+  <body class="bg-gray-100">
+    <main>
+      <!-- register form -->
+      <form action="/auth/register" method="post" id="form">
+        <div class="flex flex-col gap-4 max-w-96 text-lg mx-auto my-20">
+          <div class="flex flex-col gap-1">
+            <label for="name">Username</label>
+            <input
+              class="border-2 rounded-md py-1 px-3"
+              type="text"
+              name="name"
+              id="name"
+              pattern="^[\w]+$"
+              maxlength="20"
+              title="Username can only contain lower- and upper case letters, numbers and underscores (_).
+               Example: My_Username52. (Maximum length: 20 letters) "
+              required
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="email">Email</label>
+            <input
+              class="border-2 rounded-md py-1 px-3"
+              type="email"
+              name="email"
+              id="email"
+              pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+              title="only @(stud.)noroff.no email addresses are allowed"
+              required
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="password">Password</label>
+            <input
+              class="border-2 rounded-md py-1 px-3"
+              type="password"
+              name="password"
+              id="password"
+              minlength="8"
+              required
+            />
+          <!-- </div> -->
+          <!-- <div class="flex flex-col gap-1">
+            <label for="password-confirm">Confirm Password</label>
+            <input
+              class="border-2 rounded-md py-1 px-3"
+              type="password"
+              name="password-confirm"
+              id="password-confirm"
+              required
+            /> -->
+          <!-- </div> -->
+          <!-- <div class="flex flex-col gap-1">
+            <label for="url-register">Avatar (optional)</label>
+            <input
+              class="border-2 rounded-md py-1 px-3"
+              type="url"
+              name="avatar"
+              id="avatar"
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="banner">Banner (optional)</label>
+            <input
+              class="border-2 rounded-md py-1 px-3"
+              type="url"
+              name="banner"
+              id="banner"
+            />
+          </div> -->
+          <button
+            class="bg-primary hover:bg-primary-light duration-500 w-36 rounded-3xl p-2 shadow-md text-slate-200 mt-6"
+          >
+            Register
+          </button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
