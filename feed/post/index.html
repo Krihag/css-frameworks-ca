@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media - Feed page</title>
+    <meta
+      name="description"
+      content="This is the feed page for the social media platform. Create, read and comment on posts."
+    />
+    <script defer src="/script.js"></script>
+    <script type="module" src="/src/js/index.mjs"></script>
+    <script
+      src="https://kit.fontawesome.com/5b97174c12.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../src/tailwind.css" />
+  </head>
+
+  <body class="bg-gray-200">
+    <header class="bg-primary py-5 text-slate-300">
+      <nav
+        class="max-w-7xl m-auto lg:flex items-center gap-8 justify-between px-8"
+      >
+        <div class="lg:flex gap-8 items-center justify-center">
+          <div class="flex justify-between">
+            <a href="/feed/" class="text-xl uppercase">Social media platform</a>
+            <div class="lg:hidden py-1 px-2 cursor-pointer" id="hamburger-menu">
+              <i class="fa-solid fa-bars text-xl"></i>
+            </div>
+          </div>
+
+          <ul
+            class="my-12 hidden lg:my-0 lg:flex gap-3 uppercase hidden-nav text-center"
+          >
+            <li class="hover:text-slate-400 my-2">
+              <a href="/profile/">Profile</a>
+            </li>
+            <li class="hover:text-slate-400 my-2 font-bold">
+              <a href="/feed/">Feed</a>
+            </li>
+          </ul>
+        </div>
+        <div class="hidden lg:flex gap-8 items-center hidden-nav text-center">
+          <div class="hidden lg:flex gap-1 justify-center my-2">
+            <input
+              type="text"
+              placeholder="Search"
+              class="px-4 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            />
+            <button
+              class="border-solid bg-primary-light px-4 border-gray-700 rounded-md shadow-md"
+            >
+              Search
+            </button>
+          </div>
+          <a href="../">Logout</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="max-w-7xl m-auto">
+      <section class="max-w-4xl py-20 m-auto">
+        <div class="w-full bg-white px-10 py-6 rounded-lg shadow-md text-lg">
+          <div class="flex justify-between items-center">
+     
+          </div>
+          <div class="mt-8">
+            <div class="flex justify-between items-center">
+              <div class="flex gap-2 items-center">
+                <img
+                  src="https://picsum.photos/seed/picsum/200/200"
+                  alt="Profile picture"
+                  class="rounded-full w-12 h-12"
+                />
+                <div>
+                  <div class="font-bold">John Doe</div>
+                  <div class="text-sm text-slate-400">2 hours ago</div>
+                </div>
+              </div>
+              <div class="flex gap-6 ">
+                <a href="./edit/" class="text-slate-400">
+                  <i class="fa-solid fa-pencil text-xl"></i>
+                </a>
+                <a href="./delete/" class="text-slate-400">
+                  <i class="fa-solid fa-trash text-xl"></i>
+                </a>
+              </div>
+            </div>
+            <div class="mt-4">
+                <p class="text-2xl font-semibold">This is an example title</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+                voluptatum, quibusdam, quia, voluptate voluptas quod
+                exercitationem quos dolorum voluptatibus quae doloremque
+                molestiae. Quisquam, voluptatum. Quisquam, voluptatum.
+              </p>
+            </div>
+
+            <!--Comments-->
+            <div class="ml-20 mt-5 pt-5 border-t-2">
+            <div class="flex justify-between items-center ">
+              <div class="flex gap-2 items-center">
+                <img
+                  src="https://picsum.photos/seed/picsum/200/200"
+                  alt="Profile picture"
+                  class="rounded-full w-10 h-10"
+                />
+                <div>
+                  <div class="font-bold font-sm">Apple Mac</div>
+                  <div class="text-sm text-slate-400">1 hours ago</div>
+                </div>
+              </div>
+              <div class="flex gap-6 ">
+                <a href="./edit/" class="text-slate-400">
+                  <i class="fa-solid fa-pencil text-xl"></i>
+                </a>
+                <a href="./delete/" class="text-slate-400">
+                  <i class="fa-solid fa-trash text-xl"></i>
+                </a>
+              </div>
+          
+            </div>
+            <div class="mt-4">This is a test reply comment</div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-primary p-8 text-slate-200 text-lg">
+      <div class="max-w-7xl flex justify-between items-center m-auto">
+        <div>
+          <p>&copy; Copyright 2024</p>
+          <div>Social Media Platform</div>
+        </div>
+        <ul>
+          <li>Some</li>
+          <li>Footer</li>
+          <li>Items</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

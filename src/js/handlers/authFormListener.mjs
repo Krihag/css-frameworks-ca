@@ -1,17 +1,17 @@
-import register from "../api/auth/register.mjs";
+import authUser from "../api/auth/authUser.mjs";
 
-const form = document.getElementById("form");
-
-export async function formListener() {
+export async function formListener(form) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
     const profile = Object.fromEntries(formData.entries());
+    //clear input fields
+    console.log(profile);
 
     const method = form.method;
     const actionUrl = new URL(form.action);
     const action = actionUrl.pathname;
 
-    register(profile, action, method);
+    authUser(profile, action, method);
   });
 }

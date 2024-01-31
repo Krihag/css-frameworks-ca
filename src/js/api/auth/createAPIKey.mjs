@@ -5,8 +5,11 @@ import { API_HOST_URL, API_SOCIAL_URL } from "../constants.mjs";
  * @returns {string} The created API key.
  * @throws {Error} If failed to create the API key.
  */
-export async function createApiKey() {
-  const response = await fetch(API_SOCIAL_URL + "/auth/create-api-key", {
+export default async function createApiKey(token) {
+  const response = await fetch(API_HOST_URL + "/auth/create-api-key", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
     method: "POST",
   });
   console.log(response);
