@@ -1,3 +1,5 @@
+import formatDate from "../utils/formatDate.mjs";
+
 export default function postHTML(post) {
   // Create parent container element
 
@@ -10,8 +12,10 @@ export default function postHTML(post) {
     "px-6",
     "mx-6",
     "w-full",
-    "max-w-xl"
+    "max-w-xl",
+    "cursor-pointer"
   );
+  container.dataset.postId = post.id;
 
   // Create profile section
   const profileSection = document.createElement("div");
@@ -43,14 +47,7 @@ export default function postHTML(post) {
 
   const postDate = document.createElement("p");
   postDate.classList.add("text-gray-500");
-  const date = new Date(post.created);
-  const year = date.getFullYear();
-  let month = date.getMonth() + 1;
-  if (month < 10) {
-    month = `0${month}`;
-  }
-  const day = date.getDate();
-  postDate.textContent = `${day}/${month}/${year}`;
+  postDate.textContent = formatDate(post.created);
 
   profileInfo.appendChild(postedBy);
   profileInfo.appendChild(postDate);
@@ -151,6 +148,11 @@ export default function postHTML(post) {
   container.appendChild(commentsSection);
   container.appendChild(likesSection);
   container.appendChild(commentInput);
+
+  container.addEventListener("click", (e) => {
+    console.log(container.dataset.postId);
+    location.href = `/post/?id=${container.dataset.postId}`;
+  });
 
   return container;
 }

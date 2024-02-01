@@ -14,9 +14,8 @@ const profile = profileData.data;
 
 profileDetails(profile);
 const posts = await getPosts(`/profiles/${name}`);
-console.log(posts);
-console.log(profile);
 
+console.log(posts);
 posts &&
   posts.data.forEach((post) => {
     document.getElementById("posts-container").appendChild(postTemplate(post));
