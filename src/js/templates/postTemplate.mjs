@@ -1,7 +1,6 @@
 export default function postHTML(post) {
   // Create parent container element
-  console.log(post);
-  console.log(post.author.avatar.url);
+
   const container = document.createElement("div");
   container.classList.add(
     "bg-white",
@@ -23,20 +22,22 @@ export default function postHTML(post) {
   profileImage.alt = "Profile Picture";
   profileImage.classList.add(
     "rounded-full",
-    "h-14",
-    "w-14",
+    "h-12",
+    "w-12",
+    "post-profile-img",
     "shadow-lg",
     "object-cover"
   );
 
   const profileInfo = document.createElement("div");
-  profileInfo.classList.add("ml-4");
+  profileInfo.classList.add("ml-2");
 
   const postedBy = document.createElement("p");
   postedBy.textContent = "Posted by: ";
   const anchor = document.createElement("a");
   anchor.href = "/profile/";
   anchor.classList.add("text-primary", "font-semibold");
+
   anchor.textContent = post.author.name;
   postedBy.appendChild(anchor);
 

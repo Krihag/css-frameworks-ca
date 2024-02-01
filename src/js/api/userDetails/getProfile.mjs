@@ -8,7 +8,6 @@ export default async function userProfile(name) {
   const params = new URLSearchParams({
     _following: "true",
     _followers: "true",
-    _posts: "true",
   });
   profileUrl.search = params.toString();
 
@@ -17,7 +16,7 @@ export default async function userProfile(name) {
     method: "GET",
   });
   const newProfile = await response.json();
-
+  console.log(newProfile);
   save("profile", newProfile);
   return newProfile;
 }

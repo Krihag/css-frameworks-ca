@@ -39,16 +39,14 @@ export default async function authUser(profile, action, method = "post") {
     const updatedUser = await response.json();
 
     if (location.pathname === "/" || location.pathname === "/index.html") {
-      const { accessToken, name } = updatedUser.data;
-      console.log(updatedUser);
-      console.log(updatedUser.meta);
+      let { accessToken, name } = updatedUser.data;
 
+      console.log(name);
       save("token", accessToken);
-      getProfile(name);
-      // save("profile", profileInfo);
-      //   createApiKey(accessToken);
-      console.log("new URL:", "/profile?name=" + name);
-      // window.location.href = "/profile?name=" + name;
+      await getProfile(name);
+
+      // TEMPORARY FIX WITH THE index.html endpoint, WILL BE REMOVED WHEN DEPLOYED
+      window.location.href = "/profile/index.html?name=" + name;
     }
   } catch (err) {
     console.log(err);
