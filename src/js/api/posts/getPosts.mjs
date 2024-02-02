@@ -1,10 +1,10 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
 import authHeader from "../authDetails/authHeader.mjs";
 
-export default async function getPosts(specificUser = "") {
+export default async function getPosts(specificUser = "", id = "") {
   const postUrl =
     API_SOCIAL_URL +
-    `${specificUser}/posts?_author=true&_comments=true&_reactions=true`;
+    `${specificUser}/posts${id}?_author=true&_reactions=true&_comments=true`;
   console.log(postUrl);
 
   const response = await fetch(postUrl, {
@@ -12,7 +12,9 @@ export default async function getPosts(specificUser = "") {
     method: "GET",
     // body: JSON.stringify(post),
   });
+  console.log(response);
   const newPost = await response.json();
+  console.log(newPost);
 
   return newPost;
 }

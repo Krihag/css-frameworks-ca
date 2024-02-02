@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   purge: {
-    content: ["./**/*.html", "./**/*.js"],
-    // options: {
-    //   safelist: ["bg-primary", "text-primary", "border-primary"],
-    // },
+    content: ["./**/*.html", "./**/*.mjs"],
+    options: {
+      safelist: ["bg-primary", "text-primary", "border-primary"],
+    },
   },
   theme: {
     extend: {
@@ -12,7 +12,7 @@ module.exports = {
       borderColor: ["checked"],
       colors: {
         primary: "#0B4B66",
-        "primary-normal": "#0B4B65",
+        "primary-normal": "#0B4B66",
         "primary-light": "#2d7695",
       },
     },

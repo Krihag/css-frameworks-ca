@@ -17,6 +17,5 @@ if (location.pathname.includes("/feed")) {
 
   allPosts.data.forEach((post) => {
     allPostsContainer.appendChild(postTemplate(post));
-    console.log(post);
   });
 }

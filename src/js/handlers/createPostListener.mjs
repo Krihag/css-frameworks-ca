@@ -11,13 +11,16 @@ export default async function createPostListener(form) {
       tags: ["#CodeUnity"],
     };
 
-    if (post.media) {
-      const url = post.media;
+    formData.get("media");
+    if (formData.get("media")) {
+      const url = formData.get("media");
       post.media = {
         url: url,
-        alt: "Post image",
+        alt: "Post media",
       };
     }
+    console.log(post);
+    console.log(form);
 
     const newPost = await createPost(post);
     console.log(newPost);

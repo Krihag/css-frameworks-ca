@@ -21,4 +21,5 @@ posts &&
     document.getElementById("posts-container").appendChild(postTemplate(post));
   });
 
-getAllProfiles();
+const allProfiles = getAllProfiles();
+console.log(allProfiles);
