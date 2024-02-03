@@ -20,7 +20,10 @@ export default function formatDate(postCreated) {
     if (month < 10) {
       month = `0${month}`;
     }
-    const day = postDate.getDate();
+    let day = postDate.getDate();
+    if (day < 10) {
+      day = `0${day}`;
+    }
     return `${day}/${month}/${year}`;
   }
 }

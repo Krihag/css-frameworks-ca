@@ -1,4 +1,5 @@
 import formatDate from "../utils/formatDate.mjs";
+import reactionsHandler from "../handlers/reactionsHandler.mjs";
 
 export default function postHTML(post) {
   // Create parent container element
@@ -12,8 +13,7 @@ export default function postHTML(post) {
     "px-6",
     "mx-6",
     "w-full",
-    "max-w-xl",
-    "cursor-pointer"
+    "max-w-xl"
   );
   container.dataset.postId = post.id;
 
@@ -79,23 +79,31 @@ export default function postHTML(post) {
 
   mainContentSection.appendChild(postContent);
 
-  // Create comments and likes sections
-  const commentsSection = document.createElement("div");
-  commentsSection.classList.add(
-    "mt-4",
+  //
+  const commentsAndLikes = document.createElement("div");
+  commentsAndLikes.classList.add(
     "flex",
-    "gap-2",
-    "cursor-pointer",
-    "items-start",
-    "max-w-32"
+    "gap-6",
+    "mt-4",
+    "h-12",
+    "items-center"
   );
+  // Create comments and likes sections
+  const commentsSection = document.createElement("a");
+  commentsSection.classList.add(
+    "flex",
 
+    "cursor-pointer",
+    "items-center"
+  );
+  commentsSection.href = `/post/?id=${container.dataset.postId}`;
   const commentIcon = document.createElement("i");
   commentIcon.classList.add(
     "fa-regular",
     "fa-comment",
     "text-blue-700",
-    "text-lg"
+    "text-lg",
+    "p-2"
   );
 
   const commentCount = document.createElement("p");
@@ -106,16 +114,14 @@ export default function postHTML(post) {
   commentsSection.appendChild(commentCount);
 
   const likesSection = document.createElement("div");
-  likesSection.classList.add("flex", "gap-2", "items-start");
+  likesSection.classList.add("flex", "gap-2", "items-center");
 
-  const likeIcon = document.createElement("i");
-  likeIcon.classList.add(
-    "fa-regular",
-    "fa-thumbs-up",
-    "text-blue-700",
-    "text-lg",
-    "cursor-pointer"
-  );
+  const likeIcon = document.createElement("p");
+  likeIcon.classList.add("text-blue-700", "text-lg", "cursor-pointer", "p-2");
+
+  likeIcon.textContent = "👍";
+
+  reactionsHandler(post.id, likeIcon);
 
   const likeCount = document.createElement("p");
   likeCount.classList.add("text-blue-700");
@@ -123,7 +129,8 @@ export default function postHTML(post) {
 
   likesSection.appendChild(likeIcon);
   likesSection.appendChild(likeCount);
-
+  commentsAndLikes.appendChild(commentsSection);
+  commentsAndLikes.appendChild(likesSection);
   // Create comment input
   const commentInput = document.createElement("input");
   commentInput.classList.add(
@@ -145,13 +152,12 @@ export default function postHTML(post) {
   // Append all sections to the container
   container.appendChild(profileSection);
   container.appendChild(mainContentSection);
-  container.appendChild(commentsSection);
-  container.appendChild(likesSection);
+  container.appendChild(commentsAndLikes);
+
   container.appendChild(commentInput);
 
-  container.addEventListener("click", (e) => {
-    console.log(container.dataset.postId);
-    location.href = `/post/?id=${container.dataset.postId}`;
+  likeIcon.addEventListener("click", async (e) => {
+    console.log(post.id);
   });
 
   return container;

@@ -4,6 +4,7 @@ import load from "../storage/load.mjs";
 import profileDetails from "../templates/profileDetails.mjs";
 import getPosts from "../api/posts/getPosts.mjs";
 import postTemplate from "../templates/postTemplate.mjs";
+import changeAvatarForm from "../handlers/changeAvatarForm.mjs";
 
 let params = new URLSearchParams(window.location.search);
 let name = params.get("name");
@@ -23,3 +24,4 @@ posts &&
 
 const allProfiles = getAllProfiles();
 console.log(allProfiles);
+changeAvatarForm();
