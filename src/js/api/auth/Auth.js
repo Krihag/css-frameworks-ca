@@ -12,7 +12,7 @@ export default class Auth {
   constructor(method, headers, endpoint, body = null) {
     this.method = method;
     this.headers = headers;
-    this.url = `"https://v2.api.noroff.dev"${endpoint}`;
+    this.url = `https://v2.api.noroff.dev${endpoint}`;
     this.body = body;
   }
 
@@ -22,6 +22,8 @@ export default class Auth {
    */
   async fetch() {
     this.body && (this.body = JSON.stringify(this.body));
+
+    // const fullUrl = new URL(this.url);
     try {
       const response = await fetch(this.url, {
         headers: this.headers,
